@@ -129,5 +129,71 @@ sr.reveal(".technologies", {
             }, 2000);
         });
     });
-  
+
+    /* Theme Dark */
+  const root = document.documentElement;
+  const key = 'theme';
+  const btn = document.querySelector('.container-theme');
+
+  const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem(key);
+  const initial = saved || (prefersDark() ? 'dark' : 'light');
+
+  function setTheme(t) {
+    // Fade overlay
+    root.classList.add('theme-fade');
+    root.setAttribute('data-theme', t);
+    localStorage.setItem(key, t);
+    setTimeout(() => root.classList.remove('theme-fade'), 500);
+  }
+
+  setTheme(initial);
+
+  btn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem(key)) setTheme(e.matches ? 'dark' : 'light');
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
