@@ -114,5 +114,20 @@ sr.reveal(".technologies", {
     origin: "bottom",
     interval: 200 
 });
+
+    const boton = document.getElementById("btnCopiar");
+    const toast = document.getElementById("toast");
+
+    boton.addEventListener("click", () => {
+        const numero = "+57 322 5257230"; 
+
+        navigator.clipboard.writeText(numero).then(() => {
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2000);
+        });
+    });
   
 });

@@ -639,3 +639,31 @@ footer .container-footer ul li a {
 footer .container-footer ul li a:hover {
     color: #DF8908;
 }
+
+/* Modal */
+.contact-number {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.toast {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00c853;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    top: 20px;
+    opacity: 1;
+}
