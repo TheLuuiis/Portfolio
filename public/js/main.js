@@ -130,7 +130,7 @@ sr.reveal(".technologies", {
         });
     });
 
-    /* Theme Dark */
+  /* Theme Dark */
   const root = document.documentElement;
   const key = 'theme';
   const btn = document.querySelector('.container-theme');
@@ -140,7 +140,6 @@ sr.reveal(".technologies", {
   const initial = saved || (prefersDark() ? 'dark' : 'light');
 
   function setTheme(t) {
-    // Fade overlay
     root.classList.add('theme-fade');
     root.setAttribute('data-theme', t);
     localStorage.setItem(key, t);
@@ -157,43 +156,5 @@ sr.reveal(".technologies", {
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     if (!localStorage.getItem(key)) setTheme(e.matches ? 'dark' : 'light');
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
